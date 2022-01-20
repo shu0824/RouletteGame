@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="icon" href="mario item/favicon.png">
+  <title>ルーレットゲーム</title>
+</head>
+<body>
+  <section class="field" id="field">
+    <ul id="itemList">
+      <li><img id="firstItem" class="opa-7"></li>
+      <li><img id="secondItem" class="opa-7"></li>
+      <li><img id="thirdItem" class="opa-7"></li>
+    </ul>
+    <div id="message">Game Clear!!</div>
+    <div id="replay">もう一度遊びますか？</div>
+    <div class="sky"></div>
+    <div class="block"></div>
+    <div class="dokan1" id="dokan1"><img src="mario item/大仏.png"></div>
+    <!-- <div class="dokan2" id="dokan2"><img src="mario item/タワー.png"></div> -->
+    <div class="dokan3" id="dokan3"><img src="mario item/城.png"></div>
+    <div id="mario" class="marioNormal">
+      <img id="marioImg" src="mario item/114747.png">
+    </div>
+    <a id="Btn"><i class="far fa-arrow-alt-circle-up size"></i></a>
+    <div id="qBox">
+      <div id="boxIn">
+        <img id='itemImg'  src="mario item/hatena.png">
+      </div>
+    </div>
+  </section>
+  <section id="menu">
+    <div><p>CHARACTER</p></div>
+    <a id="menuBack" class="opa0"><i class="fa fa-times btnBack"></i></a>
+    <ul id="player">
+      <li><img id="playerImg1" src="mario item/ビジネス.png"></li>
+      <li><img id="playerImg2" src="mario item/111024.png"></li>
+      <li><img id="playerImg3" src="mario item/老人.png"></li>
+      <li><img id="playerImg4" src="mario item/157480.png"></li>
+    </ul>
+  </section>
+  <section>
+    <div id="itemMenu">
+      <div id="itemPageFront" class="opa0">
+        <img src="mario item/カバ.png" id='front' class="choice" onclick="erase(this)">
+        <img src="mario item/イヌ.png" id='front' class="choice" onclick="erase(this)">
+        <img src="mario item/ウシ.png" id='front' class="choice" onclick="erase(this)">
+        <img src="mario item/キツネ.png" id='front'  onclick="erase(this)">
+        <img src="mario item/サル.png" id='front'  onclick="erase(this)">
+        <img src="mario item/タヌキ.png" id='front'  onclick="erase(this)">
+        <img src="mario item/ダルマ.png" id='front'  onclick="erase(this)">
+        <img src="mario item/トリ.png" id='front'  onclick="erase(this)">
+      </div>
+      <a id="btnBack" class="opa0"><i class="fa fa-times btnBack"></i></a>
+    </div>
+  </section>
+  <section id="ending">
+    <div id="endSentence">
+      <div class="thank"><p>THANK YOU</p></div>
+      
+    </div>
+  </section>
+  <!-- 音楽 -->
+  <a id="musicBtn"><span><i class="fas fa-volume-mute"></i></span></a>
+  <a id="musicBtn2" class="hidden"><span><i class="fas fa-volume-up"></i></span></a>
+  
+  <script src="script.js"></script>
+</body>
+</html>
