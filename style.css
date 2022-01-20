@@ -1,0 +1,485 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+*{
+  user-select: none;
+}
+img{
+  object-fit: cover;
+}
+ul{
+  list-style: none;
+}
+.hidden{
+  display: none !important;
+}
+.opa0{
+  opacity: 0;
+}
+.size{
+  font-size: 5em;
+  color: black;
+}
+.size:hover{
+  opacity: .7;
+  cursor: pointer;
+}
+.size:active{
+  color: #ff0000;
+}
+.field{
+  width: 100%;
+  height: 100vh;
+  background: #a8d3ff;
+  position: relative;
+}
+.sky{
+  width: 100%;
+  height: 25%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-image: url(./mario\ item/雲3.png);
+  background-size: 40%;
+}
+.block{
+  width: 100%;
+  height: 9%;
+  position: absolute;
+  bottom: 0%;
+  z-index: 5;
+  background-image: url(./mario\ item/block.jpg);
+  background-size: contain;
+}
+.dokan1,.dokan2,.dokan3{
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  bottom: 7%;
+  z-index: 4;
+  /* background-image: url(./mario\ item/dokan.png);
+  background-size: contain; */
+}
+.dokan1 img,.dokan2 img,.dokan3 img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dokan1{
+  right: 15%;
+}
+.dokan2{
+  left: 1%;
+}
+.dokan3{
+  left: 8%;
+}
+.dokan3:hover{
+  opacity: .5;
+  cursor: pointer;
+}
+#itemList{
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  z-index: 2;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  position: relative;
+  border: 10px outset gold;
+}
+#itemList li{
+  width: calc(100%/3);
+  height: 100%;
+  position: absolute;
+  z-index: inherit;
+  background: lightsteelblue
+}
+#itemList li:nth-child(1){
+  left: 0;
+}
+#itemList li:nth-child(2){
+  left: calc(100%/3);
+}
+#itemList li:nth-child(3){
+  right: 0;
+}
+#itemList li img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+}
+.opa-7{
+  opacity: .7;
+}
+#message{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  top: 30%;
+  left: 50%;
+  font-size: 2em;
+  font-weight: bold;
+  color: orange;
+  border: 8px dashed orange;
+  background: rgba(255,255,255);
+  opacity: 0;
+  transition: 1s;
+}
+.clearMessage{
+  opacity: 1 !important;
+  font-size: 6em !important;
+  z-index: 10 !important;
+}
+#replay {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 40%;
+  left: 50%;
+  z-index: -1;
+  font-size: 4em;
+  font-weight: bold;
+  color: lightblue;
+  border: 8px double lightblue;
+  border-radius: 10px;
+  background: rgba(255,255,255);
+  opacity: 0;
+  transition: 1s;
+}
+.clearReplay {
+  opacity: 1 !important;
+  z-index: 200 !important;
+}
+#replay:hover {
+  cursor: pointer;
+  color: orange;
+  border-color: orange;
+}
+#mario{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  z-index: 2;
+}
+#mario img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.marioNormal{
+  position: absolute;
+  bottom: 5px;
+}
+.jump{
+  transition: all .4s;
+  bottom: 48%;
+}
+.fall{
+  transition: all .8s;
+  bottom: 5px;
+}
+
+#qBox{
+  width: 130px;
+  height: 130px;
+  /* background: gold; */
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 10%;
+  left: 50%;
+  position: relative;
+  z-index: 2;
+  transition: all .3s;
+}
+#qBox:hover{
+  cursor: pointer;
+  width: 170px;
+  height: 170px;
+}
+#boxIn{
+  width: 90%;
+  height: 90%;
+  background:inherit;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#boxIn img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  transition: all .3s;
+  object-fit: contain;
+  border: 9px solid gold;
+  background: white;
+  border-radius: 10px;
+}
+.itemImgActive{
+  border: 9px dotted gold !important;
+}
+.itemImgStop{
+  width: 200% !important;
+  height: 200% !important;
+
+}
+#Btn{
+  width: 50px;
+  height: 50px;
+  opacity: .6;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 25%;
+  bottom: 10%;
+}
+.boxUp{
+  top: 4% !important;
+  width: 160px !important;
+  height: 160px !important;
+}
+#menu{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  bottom: -100%;
+  background: rgba(0,0,0,.7);
+  transition: all 1s;
+  z-index: 6;
+}
+#menu div{
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  padding-bottom: 2em;
+}
+#menu p{
+  color: white;
+  font-size: 4em;
+  font-weight: bold;
+}
+.upMenu{
+  transform: translateY(-100%);
+  z-index: 3;
+}
+#player{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  background: red;
+  text-align: center;
+  border: 5px solid gold;
+}
+#player li{
+  width: calc(100%/4);
+  height: 100%;
+}
+#player img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+#player img:hover{
+  cursor: pointer;
+  background: rgba(255,215,0,.7);
+}
+
+/* エンディング */
+#ending{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -100;
+  bottom: 0;
+}
+#endSentence{
+  width: 100%;
+  height: 300vh;
+  background: rgba(0,0,0,.8);
+  position: absolute;
+  top: -200vh;
+  position: relative;
+  transition: all 30s;
+}
+.thank{
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+#endSentence p{
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+}
+.endingZ {
+  z-index: 100 !important;
+}
+.endDown{
+  transform: translateY(300vh);
+}
+#musicBtn{
+  height: 2em;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  bottom: 2%;
+  right: 19%;
+  font-size: 4em;
+  color: gray;
+  opacity: .3;
+  transition: opacity 3s,bottom 1s;
+}
+#musicBtn span:hover{
+  cursor: pointer;
+  opacity: .8;
+}
+.musicBtnUp{
+  opacity: 1 !important;
+  bottom: 25% !important;
+}
+#musicBtn2{
+  height: 2em;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  bottom: 2%;
+  right: 18.5%;
+  font-size: 4em;
+  color: red;
+  opacity: .3;
+  transition: opacity 3s,bottom 1s;
+}
+#musicBtn2 span:hover{
+  cursor: pointer;
+  opacity: .8;
+}
+
+#itemMenu{
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 30%;
+  left: 50%;
+  z-index: -1;
+  background: rgba(0,0,0,.8);
+  transition: all 2s;
+}
+.itemZoom{
+  width: 80% !important;
+  height: 80% !important;
+  z-index: 100 !important;
+  top: 50% !important;
+  left: 50%;
+}
+.btnBack{
+  font-size: 2em;
+  color: lightgray;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+.btnBack:hover{
+  cursor: pointer;
+  color: red;
+}
+#itemPageFront{
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  z-index: 100 !important;
+  transform: translate(-50%,-50%);
+  top: 55%;
+  left: 50%;
+  display: grid;
+  gap: 20px;
+  grid-template-rows: 40% 40%;
+  grid-template-columns: 25% 25% 25% 25%;
+  transition: all 1s;
+}
+#itemPageFront img{
+  width: 100%;
+  height: 100%;
+  max-width: 70%;
+  max-height: 70%;
+  opacity: .5;
+  object-fit: contain;
+}
+#itemPageFront img:hover{
+  cursor: pointer;
+  background: white;
+}
+.choice{
+  opacity: 1 !important;
+  border: 7px double gold;
+  border-radius: 7%;
+}
+
+@media screen and (max-width:768px) {
+  .dokan1,.dokan3 {
+    display: none;
+  }
+  #musicBtn,#musicBtn2 {
+    top: 10%;
+    right: 0;
+    z-index: 5;
+  }
+  #Btn {
+    left: 10%;
+  }
+  .marioNormal {
+    position: absolute;
+    bottom: 0;
+  }
+  .jump {
+    transition: all .4s;
+    bottom: 40%;
+  }
+  .fall {
+    transition: all .8s;
+    bottom: 0;
+  }
+  #itemPageFront {
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 50% 50%;
+  }
+  #message {
+    font-size: 1em;
+    text-align: center;
+  }
+  .clearMessage {
+    font-size: 5em;
+  }
+  #replay {
+    top: 50%;
+    font-size: 1em;
+  }
+  #player {
+    padding: 0;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+  }
+  #player li {
+    width: 100%;
+  }
+  #menu p{
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+  }
+}
