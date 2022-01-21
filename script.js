@@ -47,6 +47,7 @@ let theCount = 0;
 
 //music
 const reachMusic = new Audio('./marioMusic/circenses.mp3');
+reachMusic.volume = '.5';
 const dokanSound = new Audio('./marioMusic/メニュー.mp3');
 const selectSound = new Audio('./marioMusic/キャラ決定.mp3');
 const selectSound2 = new Audio('./marioMusic/決定２.mp3');
@@ -67,8 +68,8 @@ function boxAction() {
       itemImg.src = choice[num].src;
       
       //アイテム決定音
-      const stopSound = new Audio('./marioMusic/キュイン.mp3')
-      stopSound.volume = '.2';
+      const stopSound = new Audio('./marioMusic/キュイン.mp3');
+      stopSound.volume = '.1';
       stopSound.play();
     }
     //ランダム中のアイテムの画像を装飾する
@@ -150,6 +151,7 @@ function boxAction() {
             }
             //エンディングテーマ
             const endMusic = new Audio('./marioMusic/yoakenosanka.mp3#t=5,36');
+            endMusic.volume = '.5';
             endMusic.play();
             // function musicStop() {
             //   endMusic.pause();
@@ -251,7 +253,7 @@ function boxAction() {
 
   //bgm
   const bgm = new Audio('./marioMusic/menuettm.mp3');
-  bgm.volume = '.8';
+  bgm.volume = '.5';
   //音楽再生
   musicBtn.addEventListener('click',()=>{
     //音楽が再生されていないなら
@@ -336,8 +338,5 @@ function boxAction() {
   });
   
   if (window.matchMedia && window.matchMedia('(max-device-width: 768px)').matches) {
-    mario.addEventListener('click', () => {
-      menu.classList.add('upMenu');
-    });
-  
+    mario.addEventListener('click',openMenu);
   }
